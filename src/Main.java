@@ -107,3 +107,22 @@ public class Main {
         }
 
     }
+
+    private static void ConvertirFecha() {
+        System.out.println("La cadena de caracteres que tienes guardadoa es: " + cadena);
+
+        if (cadena.isEmpty()) {
+            System.out.println("Primero debes ingresar una cadena en la opcion 1");
+            return;
+        }else{
+            try{
+                DateTimeFormatter formato = DateTimeFormatter.ofPattern ("yyyy-MM-dd"); // el formato que quiero q me salga
+                LocalDate fecha = LocalDate.parse(cadena, formato);//para convertirla
+                System.out.println("La fecha es" + fecha);
+
+            }catch(DateTimeParseException e) {
+                System.out.println("Cadena introducida incorrecta,introduce una nueva cadena ");
+            }
+        }
+    }
+}
