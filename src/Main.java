@@ -90,3 +90,20 @@ public class Main {
         }
 
     }
+
+    private static void ConvertirNumeroEntero() {
+        System.out.println("La cadena de caracteres que tienes guardadoa es: " + cadena);
+
+        if (cadena.isEmpty()) {
+            System.out.println("Primero debes ingresar una cadenaen la opcion 1");
+            return; //para volver a la funcion general otra vez
+        }else{
+            try {
+                int numero = Integer.parseInt(cadena);//para convertir en numero entero pero u numero
+                System.out.println("La conversion es" + numero);
+            }catch(NumberFormatException e) {//un texto no se puede convertir en n entero por eso si hay un texto lanzar esta exception
+                System.out.println("Cadena introducida incorrecta,introduce una nueva cadena ");
+            }
+        }
+
+    }
